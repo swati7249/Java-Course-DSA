@@ -1,0 +1,33 @@
+
+public class EvenOddSum {
+    public static void main(String[] args) {
+        int start=60;
+        int end=150;
+        int sumEven=0;
+        int sumOdd=0;
+        int beg=61;
+        
+        //find all even number
+        for(int i=start;i<=end;i++){
+            if(i%2==0){
+                System.out.println(i);
+                sumEven=sumEven+i;
+            }
+           
+        }
+        System.out.println("Sum of all the Even Digits are:");
+        System.out.println(sumEven +" ");
+
+
+        for(int i=start;i<=end;i++){
+            if(i%2!=0){
+                System.out.println(i);
+                sumOdd=sumOdd+i;
+            }
+           
+        }
+        System.out.println("Sum of all the Odd Digits are:");
+        System.out.println(sumOdd +" ");
+
+    }
+}
