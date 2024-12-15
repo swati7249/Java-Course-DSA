@@ -1,0 +1,50 @@
+public class Linear {
+    public static void main(String[] args) {
+        int[] arr={6,7,5,67,88,99,100};
+        int ans=linearfun(arr,67);
+        System.out.println(ans);
+
+    }
+    //return boolean value or true /false
+    static boolean linearfun3(int[] arr,int target){
+        if(arr.length==0){
+            return false;
+        }
+        for(int element:arr){
+            if(element==target){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    //return the element
+    static int linearfun2(int[] arr,int target){
+        if(arr.length==0){
+            return Integer.MAX_VALUE;
+        }
+        
+        for(int element:arr){
+            if(element==target){
+                return element;
+            }
+        }
+        return Integer.MAX_VALUE;
+    }
+
+
+//return the index value
+    static int linearfun(int[] arr,int target){
+        if(arr.length==0){
+            return -1;
+        }
+        for(int i=0;i<arr.length;i++){
+            int element=arr[i];
+            if(element==target){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
