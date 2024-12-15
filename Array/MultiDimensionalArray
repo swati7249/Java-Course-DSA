@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class MultidimensionalArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        
+        int[][] arr = new int[3][2];
+
+        System.out.println("Enter 6 numbers for the 3x2 array:");
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+    
+        System.out.println("\nThe array is:");
+        for (int i = 0; i < arr.length; i++) {
+            /*for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println(); */
+            //we can also use arrays.tostring method instead of internal for loop
+            System.out.println(Arrays.toString(arr[i]));
+        }
+
+        // Close the scanner
+        sc.close();
+    }
+}
