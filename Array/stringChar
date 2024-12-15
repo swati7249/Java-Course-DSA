@@ -1,0 +1,30 @@
+public class strChar {
+    public static void main(String[] args) {
+        /*
+         * String str = "madam";
+         * char[] chars = str.toCharArray();
+         * 
+         * int start = 0, end = chars.length - 1;
+         * boolean isPalindrome = true;
+         * 
+         * while (start < end) {
+         * if (chars[start] != chars[end]) {
+         * isPalindrome = false;
+         * break;
+         * }
+         * start++;
+         * end--;
+         * }
+         * 
+         * System.out.println("Is palindrome: " + isPalindrome);
+         */
+        String str = "hello";
+        char[] chars = str.toCharArray();
+
+        for (char c : chars) {
+            System.out.println(c);
+        }
+
+    }
+
+}
