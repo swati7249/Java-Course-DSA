@@ -1,0 +1,15 @@
+public class divisible {
+    public static void main(String[] args) {
+        int start = 9;
+        int end = 100;
+        int count = 0;
+
+        for (int i = start; i <= end; i++) {
+            if (i % 4 == 0 && i % 6 == 0) { 
+                System.out.println(i + " ");
+                count++;
+            }
+        }
+        System.out.println("Total count: " + count);
+    }
+}
