@@ -1,0 +1,27 @@
+public class RichestWealth {
+    public static void main(String[] args) {
+        int[][] accounts = {
+                { 1, 2, 3 },
+                { 3, 2, 7 },
+        };
+        System.out.println(maxWealth(accounts));
+    }
+
+    public static int maxWealth(int[][] accounts) {
+        int ans = Integer.MIN_VALUE; // To store the maximum wealth
+        // iterate for each person Row
+        for (int p = 0; p < accounts.length; p++) {
+            int sum = 0;// sum of the current wealth
+
+            for (int a = 0; a < accounts[p].length; a++) {
+                sum += accounts[p][a];
+            }
+
+            // Update the maximum wealth if the current person's wealth is greater
+            if (sum > ans) {
+                ans = sum;
+            }
+        }
+        return ans;
+    }
+}
