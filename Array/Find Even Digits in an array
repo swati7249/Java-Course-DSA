@@ -1,0 +1,37 @@
+public class practice {
+    public static void main(String[] args) {
+        int[] nums = { 12, 456, 7896, 34, 5, 678, 899 };
+        System.out.println(CountEvenDigits(nums));
+    }
+
+    static int CountEvenDigits(int[] nums) {
+        int count = 0;
+        for (int num : nums) {
+            if (EvenDigits(num)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    static boolean EvenDigits( int num){
+        int hasEvenDigits=countDigits(num);
+             return hasEvenDigits %2==0;
+        
+    }
+
+    static int countDigits(int num) {
+        if (num < 0) {
+            return -num;
+        }
+        if (num == 0) {
+            return 1;
+        }
+        int count = 0;
+        while (num > 0) {
+            count++;
+            num = num / 10;
+        }
+        return count;
+    }
+}
