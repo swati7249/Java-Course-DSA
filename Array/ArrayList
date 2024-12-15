@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        // Create an ArrayList with an initial capacity of 10
+        ArrayList<Integer> list = new ArrayList<>(10);
+
+        // Uncomment the following lines to test additional ArrayList operations:
+        // list.add(67);
+        // list.add(77);
+        // list.add(87);
+        // list.add(97);
+        // list.add(57);
+        // list.add(37);
+        // System.out.println(list.contains(67)); // Check if the list contains 67
+        // System.out.println(list.set(0, 88));   // Update the value at index 0 to 88
+        // System.out.println(list.remove(2));   // Remove the element at index 2
+        // System.out.println(list);
+
+        // Input 5 integers into the ArrayList
+        System.out.println("Enter 5 integers:");
+        for (int i = 0; i < 5; i++) {
+            list.add(in.nextInt());
+        }
+
+        // Retrieve and print all elements in the ArrayList
+        System.out.println("Elements in the list:");
+        for (int i = 0; i < 5; i++) { // Use list.size() instead of hardcoding the size
+            System.out.println("Index " + i + ": " + list.get(i)); // Print index and value
+        }
+
+        in.close(); // Close the scanner
+    }
+}
