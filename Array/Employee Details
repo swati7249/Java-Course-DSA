@@ -1,0 +1,78 @@
+public class Employee {
+    // class to handle the employee details
+    static class EmployeeDetails {
+        String name;
+        String designation;
+        String city;
+        String phoneNumber;
+        double salary;
+
+        // constructor to initialize the objects
+        public EmployeeDetails(String name, String designation, String city, String phoneNumber, double salary) {
+            this.name = name;
+            this.designation = designation;
+            this.city = city;
+            this.phoneNumber = phoneNumber;
+            this.salary = salary;
+        }
+
+        // Method to display the details of the employee
+        public void displayDetails() {
+            System.out.println("Name:" + name);
+            System.out.println("Designation:" + designation);
+            System.out.println("City:" + city);
+            System.out.println("PhoneNumber:" + phoneNumber);
+            System.out.println("Salary:" + salary);
+        }
+    }
+
+    public static void main(String[] args) {
+        // check for the enough arguments are passed
+        if (args.length % 5 != 0) {
+            System.out
+                    .println("Please provide the Complete Employee Details!(Name,Designation,City,PhoneNumber,Salary)");
+            return;
+        }
+        // Create the new array that store the Employee Objects
+        int numOfEmployees = args.length / 5;
+        EmployeeDetails[] employee = new EmployeeDetails[numOfEmployees];
+        // parse command line arguments and create employee objects
+        for (int i = 0; i < numOfEmployees; i++) {
+            String name = args[i * 5];
+            String designation = args[i * 5 + 1];
+            String city = args[i * 5 + 2];
+            String phoneNumber = args[i * 5 + 3];
+            double salary = Double.parseDouble(args[i * 5 + 4]);
+            employee[i] = new EmployeeDetails(name, designation, city, phoneNumber, salary);
+        }
+
+        // Display Ecah employee details
+        System.out.println("Employees Details:");
+        for (EmployeeDetails employees : employee) {
+            employees.displayDetails();
+
+        }
+
+        // Find the Employee with largest and smallest salary
+        if (employee.length > 0) {
+            EmployeeDetails highestSalary = employee[0];
+            EmployeeDetails lowestSalary = employee[0];
+            for (EmployeeDetails employees : employee) {
+                if (employees.salary > highestSalary.salary) {
+                    highestSalary = employees;
+                }
+                if (employees.salary < lowestSalary.salary) {
+                    highestSalary = employees;
+                }
+            }
+
+            //Display the Employee with Highest Salary
+            System.out.println("Employee with the Highest Salary:");
+            highestSalary.displayDetails();
+            System.out.println("Employee with the Lowest Salary:");
+            lowestSalary.displayDetails();
+
+        }
+
+    }
+}
