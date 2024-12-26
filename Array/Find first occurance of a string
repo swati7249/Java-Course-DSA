@@ -1,0 +1,16 @@
+public class firstOccuranceInString {
+    public static int strStr(String haystack, String needle) {
+        if (needle.isEmpty()) {
+            return -1;
+        }
+        return haystack.indexOf(needle);
+    }
+
+    public static void main(String[] args) {
+        String haystack = "sadbutsad";
+        String needle = "sad";
+        int result = strStr(haystack, needle);
+        System.out.println("Output: " + result);
+
+}
+}
