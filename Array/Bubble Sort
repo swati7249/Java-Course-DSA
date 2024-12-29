@@ -1,0 +1,51 @@
+import java.util.Arrays;
+
+public class bubbleSort {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5};
+        bubblesort(arr);
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(arr));
+    }
+
+   /*  static void bubblesort(int[] arr) {
+        // Outer loop for the number of passes
+        for (int i = 0; i < arr.length - 1; i++) {
+            // Inner loop for comparing adjacent elements
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }*/
+
+
+
+
+
+
+    static void bubblesort(int[] arr) {
+        boolean swapped;
+        // Outer loop for the number of passes
+        for (int i = 0; i < arr.length - 1; i++) {
+            swapped=false;
+            // Inner loop for comparing adjacent elements
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped=true;
+                }
+            }
+            //if array is already sorted so,no swap occur
+            if(!swapped){
+                break;
+            }
+        }
+       
+    }
+}
