@@ -1,0 +1,21 @@
+public class monotonicArray {
+    public static void main(String[] args) {
+        int[] arr = {1,3,3,2};
+        System.out.println(MonotonicArray(arr));
+    }
+
+    static boolean MonotonicArray(int[] arr) {
+        boolean isIncreasing = true;
+        boolean isDecreasing = true;
+        for (int i = 0; i < arr.length - 1; i++) {
+            // check for increasing order first
+            if (arr[i] > arr[i + 1] && arr[i] != arr[i + 1]) {
+                isIncreasing = false;
+            } 
+            if(arr[i] < arr[i + 1] && arr[i] != arr[i + 1] ){
+                isDecreasing = false;
+            }
+        }
+        return isIncreasing || isDecreasing;
+    }
+}
