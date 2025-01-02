@@ -1,0 +1,34 @@
+public class ReverseVowelsofaString {
+    public static void main(String[] args) {
+        String s = "IceCreAm";
+        System.out.println(reverseVowels(s));
+    }
+
+    public static String reverseVowels(String s) {
+        char[] arrChar = s.toCharArray();
+        int i = 0;
+        int j = arrChar.length - 1;
+        while (i < j) {
+            while (i < j && !isVowels(arrChar[i])) {
+                i++;
+            }
+            while (i < j && !isVowels(arrChar[j])) {
+                j--;
+            }
+            if (i < j) {
+                char temp = arrChar[i];
+                arrChar[i] = arrChar[j];
+                arrChar[j] = temp;
+                i++;
+                j--;
+            }
+        }
+        return new String(arrChar);
+    }
+
+    public static boolean isVowels(char c) {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O'
+                || c == 'U';
+    }
+
+}
