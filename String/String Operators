@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class StringOperators {
+    public static void main(String[] args) {
+        System.out.println('a'+'b');
+        System.out.println("a" + "b");
+        System.out.println('a');
+        System.out.println((char)('a' + 3));
+        System.out.println((char)('a' + 1));
+        System.out.println((char)('a' + 2));
+        System.out.println(("a" + 2));
+        //integer will be converted to integer that will call to string
+
+
+        System.out.println("swati" + new ArrayList<>());
+        // System.out.println("swati" + new Integer(56));
+
+
+
+         //it will give us error because operator only works with premitives and string,but we can use it with all the complex objects but the condition is that one of them should be string
+        //System.out.println(new ArrayList<>() + new Integer(56));
+        // System.out.println(new ArrayList<>() +""+ new Integer(56));//here it will work because one is out of the given object is type of string
+
+
+
+        System.out.println();
+        
+
+       
+    }
+}
