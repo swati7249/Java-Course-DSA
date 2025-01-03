@@ -1,0 +1,135 @@
+public class AllThePatterns {
+    public static void main(String[] args) {
+        pattern10(5);
+    }
+
+    public static void pattern1(int n) {
+        for (int i = 1; i <= n; i++) {
+            // for,every row the column
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            // when we printed a row we need to add a new line
+            System.out.println(" ");
+        }
+    }
+
+    public static void pattern2(int n) {
+        for (int i = 1; i <= n; i++) {
+            // for,every row the column
+            for (int j = 1; j <= n; j++) {
+                System.out.print("*");
+            }
+            // when we printed a row we need to add a new line
+            System.out.println(" ");
+        }
+    }
+
+    public static void pattern3(int n) {
+        for (int i = 1; i <= n; i++) {
+            // for,every row the column
+            for (int j = 1; j <= n - i + 1; j++) {
+                System.out.print("*");
+            }
+            // when we printed a row we need to add a new line
+            System.out.println(" ");
+        }
+    }
+
+    public static void pattern4(int n) {
+        for (int i = 1; i <= n; i++) {
+            // for,every row the column
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            // when we printed a row we need to add a new line
+            System.out.println(" ");
+        }
+    }
+
+    public static void pattern5(int n) {
+        for (int i = 1; i < 2 * n; i++) {
+            // for,every row the column
+            int totalcolumninrow = i > n ? 2 * n - i : i;
+            for (int j = 0; j < totalcolumninrow; j++) {
+                System.out.print("*" + " ");
+            }
+            // when we printed a row we need to add a new line
+            System.out.println(" ");
+        }
+    }
+
+    public static void pattern6(int n) {
+        for (int i = 1; i < 2 * n; i++) {
+            // for,every row the column
+            int totalcolumninrow = i > n ? 2 * n - i : i;
+            int nospace = n - totalcolumninrow;
+            for (int s = 0; s < nospace; s++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < totalcolumninrow; j++) {
+                System.out.print("* ");
+            }
+            // when we printed a row we need to add a new line
+            System.out.println();
+        }
+    }
+
+    public static void pattern7(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int space = 0; space < n - i; space++) {
+                System.out.print(" "); // Using print instead of println for spaces
+            }
+            for (int j = i; j >= 1; j--) {
+                System.out.print(j);
+            }
+            for (int j = 2; j <= i; j++) {
+                System.out.print(j);
+            }
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+
+    public static void pattern8(int n) {
+        for (int i = 1; i <= 2 * n; i++) {
+            int c = i > n ? 2 * n - i : i;
+            for (int space = 0; space < n - c; space++) {
+                System.out.print(" "); // Using print instead of println for spaces
+            }
+            for (int j = c; j >= 1; j--) {
+                System.out.print(j);
+            }
+            for (int j = 2; j <= c; j++) {
+                System.out.print(j);
+            }
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+
+    public static void pattern9(int n) {
+        n = 2 * n; 
+        for (int i = 0; i <= n; i++) 
+        { 
+            for (int j = 0; j <= n; j++)
+            { 
+                int atEveryIndex = Math.min(Math.min(i, j), Math.min(n - i, n - j)); 
+                System.out.print(atEveryIndex + " "); 
+            }
+            System.out.println();
+        }
+    }
+    public static void pattern10(int n) {
+        int originalN=n;
+        n = 2 * n; 
+        for (int i = 0; i <= n; i++) 
+        { 
+            for (int j = 0; j <= n; j++)
+            { 
+                int atEveryIndex =originalN- Math.min(Math.min(i, j), Math.min(n - i, n - j)); 
+                System.out.print(atEveryIndex + " "); 
+            }
+            System.out.println();
+        }
+    }
+
+}
