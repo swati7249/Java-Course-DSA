@@ -1,0 +1,20 @@
+public class StringComparison {
+    public static void main(String[] args) {
+        /*  a="Swati";
+        String b="Swati";
+        System.out.println(a==b);*/
+
+
+        //(==) this is a comparitor
+        String s=new String("swati");
+        String s1=new String("swati");
+        System.out.println(s==s1);
+
+
+
+        //equals() this is a method to check the values it doesn't care that the reference variable reference the same variable or not?
+        System.out.println(s.equals(s1));
+        System.out.println(s.charAt(s.length()-1));
+
+    }
+}
