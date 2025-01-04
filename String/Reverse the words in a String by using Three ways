@@ -1,0 +1,35 @@
+public class ReverseWorsInString {
+    public static void main(String[] args) {
+        String str = "a good   example";
+        System.out.println(reverseWordss(str));
+    }
+
+    public static String reverseWordss(String str) {
+        //doesn't need to used the  trim() here because we will use the trim at the end
+        String[] Split = str.split("\\s+");
+        StringBuilder rev = new StringBuilder();
+        for (int i = Split.length - 1; i >= 0; i--) {
+            rev.append(Split[i]).append(" ");
+        }
+        return rev.toString().trim();
+    }
+    public static String reverseWords(String s) {
+        //trim() is used to removeing any laeding and trailing spaces from the string and "\\s+" is a regular expression that is used to remove the extra spaces from the string(one or more extra spaces)
+        String[] Split = s.trim().split("\\s+");
+        String rev = "";
+        for (int i = Split.length - 1; i >= 0; i--) {
+            rev += Split[i] + " ";
+        }
+        return rev;
+    }
+
+    // another way with spaces
+    public static String reverseWord(String s) {
+        String[] Split = s.trim().split("\\s+");
+        StringBuilder rev = new StringBuilder();
+        for (int i = Split.length - 1; i >= 0; i--) {
+            rev.append(Split[i]).append(" ");
+        }
+        return rev.toString().trim();
+    }
+}
