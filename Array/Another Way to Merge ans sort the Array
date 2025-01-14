@@ -1,0 +1,16 @@
+import java.util.Arrays;
+
+public class AnotherWayToMergeTheArray {
+    public static void main(String[] args) {
+        int[] nums1={1,4,5};
+        int[] nums2={5,7,9,8};
+        System.out.println(Arrays.toString(merge(nums1,nums2)));
+    }
+    public static int[] merge(int[] nums1,int[] nums2){
+        int[] mergeArr=new int[nums1.length + nums2.length];
+        System.arraycopy(nums1, 0, mergeArr, 0, nums1.length);
+        System.arraycopy(nums2, 0, mergeArr, nums1.length, nums2.length);
+        Arrays.sort(mergeArr);
+       return mergeArr;
+    }
+}
